@@ -1,0 +1,290 @@
+{
+	"info": {
+		"_postman_id": "2fa21992-0092-4075-adf1-9182127b4ae4",
+		"name": "AdministrarCursos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Crear Curso",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"idCurso\":1,\r\n    \"nombre\": \"Introduccion a Java\",\r\n    \"modalidad\" : \"on demand\",\r\n    \"fechaFinalizacion\" : \"05/10/2023\",\r\n    \"listaDeTemas\" : [\r\n        {\r\n            \"idTema\" : 1\r\n        }\r\n    ]\r\n}\r\n/*{\r\n    \"idCurso\": 0,\r\n    \"nombre\": \"POO\",\r\n    \"modalidad\" : \"on demand\",\r\n    \"fechaFinalizacion\" : \"23/11/2015\"\r\n}\r\n/*{\r\n    \"idCurso\":2,\r\n    \"nombre\": \"Java para principiantes\",\r\n    \"modalidad\" : \"on demand\",\r\n    \"fechaFinalizacion\" : \"05/02/2022\"\r\n}\r\n{\r\n    \"idCurso\":1,\r\n    \"nombre\": \"Introduccion a Java\",\r\n    \"modalidad\" : \"on demand\",\r\n    \"fechaFinalizacion\" : \"05/10/2023\",\r\n    \"listaDeTemas\" : [\r\n        {\r\n            \"idTema\" : 1\r\n        },\r\n        {\r\n            \"idTema\" : 2\r\n        }\r\n    ]\r\n}\r\n/*{\r\n    \"idCurso\":2,\r\n    \"nombre\": \"Java para principiantes\",\r\n    \"modalidad\" : \"on demand\",\r\n    \"fechaFinalizacion\" : \"05/02/2022\"\r\n}\r\n{\r\n    \"idCurso\":1,\r\n    \"nombre\": \"Introduccion a la Programacion\",\r\n    \"modalidad\" : \"on demand\",\r\n    \"fechaFinalizacion\" : \"05/10/2023\"\r\n}\r\n{\r\n    \"idCurso\":3,\r\n    \"nombre\": \"POO\",\r\n    \"modalidad\" : \"on demand\",\r\n    \"fechaFinalizacion\" : \"23/11/2015\"\r\n}*/\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/cursos/crear",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cursos",
+						"crear"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear Tema",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"idTema\" : 2,\r\n    \"nombre\" : \"Estructuras Condicionales y Ciclos\",\r\n    \"descripcion\" : \"Que es If, Switch, While y Do While\"\r\n}\r\n/*{\r\n    \"idTema\" : 1,\r\n    \"nombre\" : \"Variables en Java\",\r\n    \"descripcion\" : \"Qué son y para qué se utilizan\"\r\n}\r\n/*{\r\n    \"idTema\" : 2,\r\n    \"nombre\" : \"Estructuras Condicionales\",\r\n    \"descripcion\" : \"Diferencia entre if y switch\",\r\n     \"curso\" : {\"idCurso\":2}\r\n}\r\n//otros temas si se quiere probar\r\n{\r\n    \"idTema\" : 1,\r\n    \"nombre\" : \"Variables en Java\",\r\n    \"descripcion\" : \"Qué son y para qué se utilizan\",\r\n    \"curso\" : {\"idCurso\":1}\r\n}*/",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/temas/crear",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"temas",
+						"crear"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Traer todos los Cursos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/cursos/traer",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cursos",
+						"traer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Traer todos los Temas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/temas/traer",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"temas",
+						"traer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Traer los Temas de un determinado Curso",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/cursos/temas/3",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cursos",
+						"temas",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Traer todos los Cursos que tengan como nombre la palabra \"Java\"",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/cursos/java",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cursos",
+						"java"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Traer Curso",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/curso/traer/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"curso",
+						"traer",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Traer Tema",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/tema/buscar/6",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tema",
+						"buscar",
+						"6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Modificar Curso",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"idCurso\": 5,\r\n        \"nombre\": \"POO\",\r\n        \"modalidad\": \"mixta\",\r\n        \"fechaFinalizacion\": \"23/11/2024\",\r\n        \"listaDeTemas\": []\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/curso/editar",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"curso",
+						"editar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Modificar Tema",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"idTema\" : 2,\r\n    \"nombre\" : \"Estructuras Condicionales y Ciclos\",\r\n    \"descripcion\" : \"Que es If, Switch, While y Do While\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/tema/editar",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tema",
+						"editar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Borrar Curso",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/curso/borrar/3",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"curso",
+						"borrar",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Borrar Tema",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/tema/borrar/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tema",
+						"borrar",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
